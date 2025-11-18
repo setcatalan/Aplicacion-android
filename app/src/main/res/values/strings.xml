@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Aplicacion-android</string>
+    <string name="titol">GameVerse</string>
+    <string name="seguent">Següent</string>
+    <string name="login">Log in</string>
+    <string name="idioma">idioma</string>
+    <string name="fosc">Fosc</string>
+    <string name="clar">Clar</string>
 </resources>
