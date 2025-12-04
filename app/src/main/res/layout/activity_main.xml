@@ -6,7 +6,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/Secondary"
-    android:padding="10dp"
     tools:context=".MainActivity">
 
     <TextView
@@ -31,27 +30,34 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
-        <Spinner
-            android:id="@+id/spIdiomes"
+        <TextView
+            android:id="@+id/Idioma"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:text="@string/idioma"
+            android:textSize="25sp"
+            android:layout_marginBottom="30dp"/>
 
         <RadioGroup
+            android:id="@+id/rgEstil"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
             <RadioButton
+                android:id="@+id/rdClar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/clar"
-                android:textSize="25sp"
-                android:fontFamily="@font/saira_medium"/>
+                android:textSize="22sp"
+                android:fontFamily="@font/saira_medium"
+                android:checked="true"/>
 
             <RadioButton
+                android:id="@+id/rdFosc"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/fosc"
-                android:textSize="25sp"
+                android:textSize="22sp"
                 android:fontFamily="@font/saira_medium"/>
         </RadioGroup>
 
@@ -60,7 +66,8 @@
         android:id="@+id/btnSeguent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="20dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginBottom="30dp"
         android:backgroundTint="@color/Primary"
         android:fontFamily="@font/saira_medium"
         android:paddingVertical="10dp"
@@ -81,6 +88,8 @@
         android:backgroundTint="@color/Primary"
         android:text="@string/login"
         android:textSize="20sp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
         app:cornerRadius="5dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
