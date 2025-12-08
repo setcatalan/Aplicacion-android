@@ -6,20 +6,21 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/fondo_difuminado"
-    tools:context=".ForumActivity">
+    tools:context=".JocsActivity">
 
     <TextView
-        android:id="@+id/tvForum"
+        android:id="@+id/tvJocs"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/forum"
+        android:text="@string/games"
         android:textSize="60sp"
         android:textColor="@color/black"
         android:fontFamily="@font/saira_medium"
         android:layout_marginTop="60sp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        />
 
     <Button
         android:id="@+id/btnLogin"
@@ -47,51 +48,92 @@
         app:layout_constraintTop_toTopOf="parent"/>
 
     <EditText
-        android:id="@+id/edComentari"
+        android:id="@+id/search_game"
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:layout_marginTop="16dp"
-        android:layout_marginHorizontal="10dp"
+        android:layout_marginHorizontal="20dp"
         android:background="@drawable/slot_background"
-        android:hint="@string/escriuComentari"
+        android:hint="@string/search"
         android:paddingHorizontal="16dp"
         android:textColor="@color/white"
         android:textColorHint="#AAA"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/ivFiltra"
-        app:layout_constraintTop_toBottomOf="@id/tvForum" />
+        app:layout_constraintTop_toBottomOf="@id/tvJocs" />
 
-    <ImageView
-        android:id="@+id/ivFiltra"
-        android:layout_width="wrap_content"
+    <HorizontalScrollView
+        android:id="@+id/section_bar"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:contentDescription="@string/filtra"
-        android:src="@drawable/ic_filtra"
+        android:layout_marginTop="12dp"
+        android:layout_marginHorizontal="20dp"
+        android:scrollbars="none"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/edComentari"
-        app:layout_constraintBottom_toTopOf="@id/svForum"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/search_game">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                style="?attr/materialButtonOutlinedStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:text="@string/tots"
+                android:textColor="@color/white"
+                app:strokeColor="@color/white" />
+
+            <Button
+                style="?attr/materialButtonOutlinedStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:text="@string/accio"
+                android:textColor="@color/white"
+                app:strokeColor="@color/white" />
+
+            <Button
+                style="?attr/materialButtonOutlinedStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:text="@string/rpg"
+                android:textColor="@color/white"
+                app:strokeColor="@color/white" />
+
+            <Button
+                style="?attr/materialButtonOutlinedStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/aventura"
+                android:textColor="@color/white"
+                app:strokeColor="@color/white" />
+        </LinearLayout>
+    </HorizontalScrollView>
 
     <ScrollView
-        android:id="@+id/svForum"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginHorizontal="10dp"
-        app:layout_constraintTop_toBottomOf="@+id/edComentari"
+        app:layout_constraintTop_toBottomOf="@+id/section_bar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
+
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recycler_comentaris"
+            android:id="@+id/recycler_novetats"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="16dp"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
 
             tools:itemCount="10"
-            tools:listitem="@layout/item_comentari" />
+            tools:listitem="@layout/item_jocs" />
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

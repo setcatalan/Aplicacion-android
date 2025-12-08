@@ -12,12 +12,13 @@
     <!-- Pagina Principal -->
     <string name="novetats">Novetats</string>
     <string name="menu">Menu</string>
+    <string name="imgNovetats">Imatge Novetats</string>
 
     <!-- Menu Navegació -->
     <string name="pgPrincipal">Pag. Principal</string>
     <string name="forum">Fórum</string>
     <string name="pregutes">Preguntes</string>
-    <string name="info">Info</string>
+    <string name="info">Info Jocs</string>
     <string name="ajuda">Ajuda</string>
     <string name="enrere">Enrere</string>
 
@@ -27,7 +28,9 @@
     <string name="usuari">Usuari</string>
     <string name="comentari">Comentari</string>
     <string name="joc">Joc</string>
+    <string name="escriuComentari">Escriu aqui el teu Comentari</string>
 
+    <!-- Pagina Log in -->
     <string name="register">Registrar-se</string>
     <string name="text_noHayCuenta">No tens compte? Regístrat aqui abaix:</string>
     <string name="textLogin">Log In</string>
@@ -35,12 +38,14 @@
     <string name="passUsuario">Contrasenya</string>
     <string name="tituloLogin">INICI DE SESSIÓ</string>
 
+    <!-- Pagina Registrar-se -->
     <string name="titRegister">REGISTRAR-SE</string>
     <string name="nombreUsuarioReg">Crea un nom d\'usuari</string>
     <string name="passUsuarioReg">Crea una contrasenya</string>
     <string name="repetirPass">Repeteix la contrasenya</string>
     <string name="emailReg">Introdueix el teu correu</string>
 
+    <!-- Pagina Usuari -->
     <string name="nomUser">Nom Usuari</string>
     <string name="nombre">Nom: Usuari</string>
     <string name="cognom">Cognom: Qualsevol</string>
@@ -56,14 +61,24 @@
     <string name="editText">Nom del videojoc</string>
     <string name="saveChanges">Guardar canvis</string>
 
-
     <string name="gameName">Nom del videojoc</string>
 
-
+    <!-- Pagina Videojocs -->
     <string name="games">Videojocs</string>
-    <string name="search">Buscar videojoc...</string>
+    <string name="search">Buscar videojoc…</string>
     <string name="tots">Tots</string>
     <string name="accio">Acció</string>
     <string name="rpg">RPG</string>
     <string name="aventura">Aventura</string>
+
+    <string name="descripcioJoc">Descripció</string>
+    <string name="descripcioTxt">Text sobre la descripció del videojoc</string>
+    <string name="fotos">Fotos</string>
+    <string name="video">Videos</string>
+    <string name="valoracio">Valoació</string>
+
+    <!-- Pagina Preguntes -->
+    <string name="preguntaTxt">Text de pregunta sobre un videojoc</string>
+
+    <string name="respostes">Respostes</string>
 </resources>

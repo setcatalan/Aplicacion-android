@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/Secondary"
+    android:background="@drawable/fondo_difuminado"
     tools:context=".MainActivity">
 
     <TextView
@@ -35,6 +35,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/idioma"
+            android:textColor="@color/black"
             android:textSize="25sp"
             android:layout_marginBottom="30dp"/>
 
@@ -48,6 +49,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/clar"
+                android:textColor="@color/black"
                 android:textSize="22sp"
                 android:fontFamily="@font/saira_medium"
                 android:checked="true"/>
@@ -57,6 +59,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/fosc"
+                android:textColor="@color/black"
                 android:textSize="22sp"
                 android:fontFamily="@font/saira_medium"/>
         </RadioGroup>
@@ -68,12 +71,12 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="20dp"
         android:layout_marginBottom="30dp"
-        android:backgroundTint="@color/Primary"
+        android:backgroundTint="@color/primary"
         android:fontFamily="@font/saira_medium"
         android:paddingVertical="10dp"
         android:paddingHorizontal="100dp"
         android:text="@string/seguent"
-        android:textColor="@color/Text"
+        android:textColor="@color/text"
         android:textSize="30sp"
         app:cornerRadius="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
