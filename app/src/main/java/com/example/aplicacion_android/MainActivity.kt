@@ -13,6 +13,7 @@ import androidx.core.view.WindowInsetsCompat
 class MainActivity : AppCompatActivity() {
 
     private lateinit var btnSeguent: Button
+    private lateinit var btnLogin: Button
     private lateinit var rgEstil: RadioGroup
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -30,12 +31,18 @@ class MainActivity : AppCompatActivity() {
 
     private fun initComponents() {
         btnSeguent = findViewById<Button>(R.id.btnSeguent)
+        btnLogin = findViewById<Button>(R.id.btnLogin)
         rgEstil = findViewById<RadioGroup>(R.id.rgEstil)
     }
 
     private fun initListeners() {
         btnSeguent.setOnClickListener {
             val intent = Intent(this, PrincipalActivity::class.java)
+            startActivity(intent)
+        }
+
+        btnLogin.setOnClickListener {
+            val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
         }
 

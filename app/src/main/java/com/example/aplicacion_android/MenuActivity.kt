@@ -57,5 +57,23 @@ class MenuActivity : AppCompatActivity() {
             startActivity(intent)
             finish()
         }
+
+        tvPgPreguntes.setOnClickListener {
+            val intent = Intent(this, PreguntesActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+
+        tvPgInfo.setOnClickListener {
+            val intent = Intent(this, JocsActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+
+        tvPgAjuda.setOnClickListener {
+            val intent = Intent(this, AjudaActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
     }
 }
