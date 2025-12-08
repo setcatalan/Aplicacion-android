@@ -12,6 +12,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Aplicacionandroid">
         <activity
+            android:name=".ForumActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MenuActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PrincipalActivity"
             android:name=".GamesSelectorActivity"
             android:exported="false" />
         <activity

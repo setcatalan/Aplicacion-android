@@ -2,23 +2,21 @@ package com.example.aplicacion_android
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
-import android.widget.RadioButton
-import android.widget.RadioGroup
+import android.widget.ImageView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.fragment.app.Fragment
 
-class MainActivity : AppCompatActivity() {
+class PrincipalActivity : AppCompatActivity() {
 
-    private lateinit var btnSeguent: Button
-    private lateinit var rgEstil: RadioGroup
+    private lateinit var ivMenu: ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_principal)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
@@ -29,16 +27,14 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initComponents() {
-        btnSeguent = findViewById<Button>(R.id.btnSeguent)
-        rgEstil = findViewById<RadioGroup>(R.id.rgEstil)
+        ivMenu = findViewById<ImageView>(R.id.ivMenu)
     }
 
     private fun initListeners() {
-        btnSeguent.setOnClickListener {
-            val intent = Intent(this, PrincipalActivity::class.java)
+        ivMenu.setOnClickListener {
+            val intent = Intent(this, MenuActivity::class.java)
             startActivity(intent)
         }
-
-        rgEstil.setOnCheckedChangeListener { group, checkedId ->  }
     }
+
 }

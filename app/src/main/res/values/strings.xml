@@ -1,5 +1,28 @@
 <resources>
     <string name="app_name">Aplicacion-android</string>
+
+    <!-- Pagina de Benvinguda -->
+    <string name="titol">GameVerse</string>
+    <string name="seguent">Següent</string>
+    <string name="login">Log in</string>
+    <string name="idioma">Idioma</string>
+    <string name="fosc">Fosc</string>
+    <string name="clar">Clar</string>
+
+    <!-- Pagina Principal -->
+    <string name="novetats">Novetats</string>
+    <string name="menu">Menu</string>
+
+    <!-- Menu Navegació -->
+    <string name="pgPrincipal">Pag. Principal</string>
+    <string name="forum">Fórum</string>
+    <string name="pregutes">Preguntes</string>
+    <string name="info">Info</string>
+    <string name="ajuda">Ajuda</string>
+    <string name="enrere">Enrere</string>
+
+    <!-- Pagina Forum -->
+    <string name="filtra">filtra</string>
     <string name="register">Registrar-se</string>
     <string name="text_noHayCuenta">No tens compte? Regístrat aqui abaix:</string>
     <string name="textLogin">Log In</string>
