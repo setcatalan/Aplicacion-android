@@ -81,4 +81,8 @@
     <string name="preguntaTxt">Text de pregunta sobre un videojoc</string>
 
     <string name="respostes">Respostes</string>
+
+    <!-- Pagina ajuda -->
+    <string name="preguntesFrequents">Preguntes Freqüents</string>
+    <string name="preguntaFrequent">Pregunta Freqüent</string>
 </resources>

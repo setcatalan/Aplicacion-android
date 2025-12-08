@@ -6,17 +6,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/fondo_difuminado"
-    tools:context=".PrincipalActivity">
+    tools:context=".AjudaActivity">
 
     <TextView
-        android:id="@+id/tvNovetats"
+        android:id="@+id/tvFAQ"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/novetats"
-        android:textSize="60sp"
+        android:text="@string/preguntesFrequents"
+        android:textSize="40sp"
         android:textColor="@color/black"
         android:fontFamily="@font/saira_medium"
-        android:layout_marginTop="60sp"
+        android:layout_marginTop="80sp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -51,8 +51,8 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginHorizontal="10dp"
-        android:layout_marginTop="60dp"
-        app:layout_constraintTop_toBottomOf="@+id/tvNovetats"
+        android:layout_marginTop="40dp"
+        app:layout_constraintTop_toBottomOf="@+id/tvFAQ"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
@@ -67,6 +67,6 @@
             app:layout_constraintStart_toStartOf="parent"
 
             tools:itemCount="10"
-            tools:listitem="@layout/item_novetats" />
+            tools:listitem="@layout/item_faq" />
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
