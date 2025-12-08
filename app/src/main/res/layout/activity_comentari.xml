@@ -6,20 +6,33 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/fondo_difuminado"
-    tools:context=".ForumActivity">
+    tools:context=".ComentariActivity">
+
+    <ImageView
+        android:id="@+id/ivUsuari"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:src="@drawable/ic_person"
+        android:background="@drawable/circle"
+        android:contentDescription="@string/imatgeUsuari"
+        app:layout_constraintTop_toTopOf="@id/tvUsuari"
+        app:layout_constraintBottom_toBottomOf="@id/tvUsuari"
+        app:layout_constraintEnd_toStartOf="@+id/tvUsuari"
+        app:layout_constraintStart_toStartOf="parent"/>
 
     <TextView
-        android:id="@+id/tvForum"
+        android:id="@+id/tvUsuari"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/forum"
-        android:textSize="60sp"
+        android:text="@string/usuari"
+        android:textSize="50sp"
         android:textColor="@color/black"
         android:fontFamily="@font/saira_medium"
         android:layout_marginTop="60sp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        />
 
     <Button
         android:id="@+id/btnLogin"
@@ -46,6 +59,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
 
+    <TextView
+        android:id="@+id/tvComentari"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/comentari"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:fontFamily="@font/saira_medium"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/tvUsuari"/>
+
     <EditText
         android:id="@+id/edComentari"
         android:layout_width="0dp"
@@ -60,7 +85,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/ivFiltra"
-        app:layout_constraintTop_toBottomOf="@id/tvForum" />
+        app:layout_constraintTop_toBottomOf="@id/tvComentari" />
 
     <ImageView
         android:id="@+id/ivFiltra"
@@ -69,7 +94,6 @@
         android:contentDescription="@string/filtra"
         android:src="@drawable/ic_filtra"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/edComentari"
         app:layout_constraintBottom_toTopOf="@id/svForum"/>
 
     <ScrollView
@@ -85,7 +109,7 @@
             android:id="@+id/recycler_comentaris"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="16dp"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

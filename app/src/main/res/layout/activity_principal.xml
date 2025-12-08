@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/Secondary"
+    android:background="@drawable/fondo_difuminado"
     tools:context=".PrincipalActivity">
 
     <TextView
@@ -27,7 +27,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/saira_medium"
-        android:backgroundTint="@color/Primary"
+        android:backgroundTint="@color/primary"
         android:text="@string/login"
         android:textSize="20sp"
         android:layout_marginTop="10dp"
@@ -50,30 +50,23 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="40dp"
         app:layout_constraintTop_toBottomOf="@+id/tvNovetats"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
-        <LinearLayout
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_novetats"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:gravity="center">
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:contentDescription="@string/novetats"
-                android:src="@drawable/ic_launcher_background"
-                app:tint="@color/black"/>
+            android:layout_height="0dp"
+            android:layout_marginTop="16dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
 
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:contentDescription="@string/novetats"
-                android:src="@drawable/ic_launcher_background"
-                app:tint="@color/Primary"/>
-        </LinearLayout>
+            tools:itemCount="10"
+            tools:listitem="@layout/item_novetats" />
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

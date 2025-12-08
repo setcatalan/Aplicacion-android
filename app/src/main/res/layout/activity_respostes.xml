@@ -6,13 +6,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/fondo_difuminado"
-    tools:context=".ForumActivity">
+    tools:context=".RespostesActivity">
 
     <TextView
-        android:id="@+id/tvForum"
+        android:id="@+id/tvRespostes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/forum"
+        android:text="@string/respostes"
         android:textSize="60sp"
         android:textColor="@color/black"
         android:fontFamily="@font/saira_medium"
@@ -46,6 +46,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
 
+    <TextView
+        android:id="@+id/tvPregunta"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/preguntaTxt"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:fontFamily="@font/saira_medium"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/tvRespostes"/>
+
     <EditText
         android:id="@+id/edComentari"
         android:layout_width="0dp"
@@ -60,7 +72,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/ivFiltra"
-        app:layout_constraintTop_toBottomOf="@id/tvForum" />
+        app:layout_constraintTop_toBottomOf="@id/tvPregunta" />
 
     <ImageView
         android:id="@+id/ivFiltra"
