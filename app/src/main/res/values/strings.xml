@@ -1,3 +1,41 @@
 <resources>
     <string name="app_name">Aplicacion-android</string>
+    <string name="register">Registrar-se</string>
+    <string name="text_noHayCuenta">No tens compte? Regístrat aqui abaix:</string>
+    <string name="textLogin">Log In</string>
+    <string name="nombreUsuario">Nom d\'usuari</string>
+    <string name="passUsuario">Contrasenya</string>
+    <string name="tituloLogin">INICI DE SESSIÓ</string>
+
+    <string name="titRegister">REGISTRAR-SE</string>
+    <string name="nombreUsuarioReg">Crea un nom d\'usuari</string>
+    <string name="passUsuarioReg">Crea una contrasenya</string>
+    <string name="repetirPass">Repeteix la contrasenya</string>
+    <string name="emailReg">Introdueix el teu correu</string>
+
+    <string name="nomUser">Nom Usuari</string>
+    <string name="nombre">Nom: Usuari</string>
+    <string name="cognom">Cognom: Qualsevol</string>
+    <string name="edad">Edat: 20</string>
+    <string name="sexe">Sexe: Masculí</string>
+    <string name="descripcio">Descripció: Aquí l\'usuari posarà el que ell vol, ja sigui relacionat amb els videojocs o la seva vida</string>
+    <string name="videoFav">Els 3 videojocs preferits:</string>
+    <string name="slot1">slot 1</string>
+    <string name="slot2">slot 2</string>
+    <string name="slot3">slot 3</string>
+
+    <string name="editSlot">Editar slot</string>
+    <string name="editText">Nom del videojoc</string>
+    <string name="saveChanges">Guardar canvis</string>
+
+
+    <string name="gameName">Nom del videojoc</string>
+
+
+    <string name="games">Videojocs</string>
+    <string name="search">Buscar videojoc...</string>
+    <string name="tots">Tots</string>
+    <string name="accio">Acció</string>
+    <string name="rpg">RPG</string>
+    <string name="aventura">Aventura</string>
 </resources>

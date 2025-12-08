@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    android:background="@drawable/fondo_difuminado"
+    tools:context=".UserActivity">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/profile_image"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_user_profile"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearanceOverlay="@style/CircularImage" />
+
+    <TextView
+        android:id="@+id/username"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="@string/nomUser"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/profile_image"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/profile_image"
+        app:layout_constraintTop_toTopOf="@id/profile_image" />
+
+    <LinearLayout
+        android:id="@+id/user_data_section"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@id/profile_image">
+
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:textColor="@color/white" android:textSize="17sp" android:text="@string/nombre" android:paddingVertical="4dp"/>
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:textColor="@color/white" android:textSize="17sp" android:text="@string/cognom" android:paddingVertical="4dp"/>
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:textColor="@color/white" android:textSize="17sp" android:text="@string/edad" android:paddingVertical="4dp"/>
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:textColor="@color/white" android:textSize="17sp" android:text="@string/sexe" android:paddingVertical="4dp"/>
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:textColor="@color/white" android:textSize="17sp" android:text="@string/descripcio" android:paddingVertical="4dp"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/games_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="@string/videoFav"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/user_data_section" />
+
+    <FrameLayout
+        android:id="@+id/container_slot1"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/slot_background"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/container_slot2"
+        app:layout_constraintTop_toBottomOf="@id/games_title">
+
+        <ImageView
+            android:id="@+id/slot1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="24dp"
+            android:src="@drawable/plus_circle_svgrepo_com" />
+
+        <ImageView
+            android:id="@+id/delete_slot1"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_close"
+            android:layout_gravity="top|end"
+            android:padding="4dp" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/container_slot2"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:background="@drawable/slot_background"
+        app:layout_constraintTop_toTopOf="@id/container_slot1"
+        app:layout_constraintStart_toEndOf="@id/container_slot1"
+        app:layout_constraintEnd_toStartOf="@+id/container_slot3">
+
+        <ImageView
+            android:id="@+id/slot2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="24dp"
+            android:src="@drawable/plus_circle_svgrepo_com" />
+
+        <ImageView
+            android:id="@+id/delete_slot2"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_close"
+            android:layout_gravity="top|end"
+            android:padding="4dp" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/container_slot3"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:background="@drawable/slot_background"
+        app:layout_constraintTop_toTopOf="@id/container_slot1"
+        app:layout_constraintStart_toEndOf="@id/container_slot2"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:id="@+id/slot3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="24dp"
+            android:src="@drawable/plus_circle_svgrepo_com" />
+
+        <ImageView
+            android:id="@+id/delete_slot3"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_close"
+            android:layout_gravity="top|end"
+            android:padding="4dp" />
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
