@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginActivity"
+    tools:context=".RegisterActivity"
     android:background="@drawable/fondo_difuminado">
 
     <TextView
@@ -14,64 +14,84 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
         android:fontFamily="@font/saira_medium"
-        android:text="@string/tituloLogin"
+        android:text="@string/titRegister"
         android:textColor="@color/black"
         android:textSize="40sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    
     <EditText
         android:id="@+id/etUser"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/nombreUsuario"
+        android:hint="@string/nombreUsuarioReg"
         android:fontFamily="@font/saira_medium"
         android:padding="12dp"
         android:background="@color/white"
         android:textColorHint="@color/black"
-        app:layout_constraintBottom_toTopOf="@id/btnConfirmarLogin"
+        app:layout_constraintTop_toBottomOf="@id/tituloLogin"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginHorizontal="30dp"
-        android:layout_marginBottom="200dp"/>
+        android:layout_marginTop="90dp"
+        />
 
     <EditText
-        android:id="@+id/etPass"
+        android:id="@+id/etPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/passUsuario"
+        android:hint="@string/passUsuarioReg"
         android:fontFamily="@font/saira_medium"
         android:padding="12dp"
         android:background="@color/white"
         android:textColorHint="@color/black"
-        app:layout_constraintBottom_toTopOf="@id/btnConfirmarLogin"
+        app:layout_constraintTop_toBottomOf="@id/etUser"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginHorizontal="30dp"
-        android:layout_marginBottom="100dp"/>
+        android:layout_marginTop="45dp"
+        />
 
-
-    <Button
-        android:id="@+id/btnConfirmarLogin"
+    <EditText
+        android:id="@+id/etPasswordRep"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@id/noHayCuenta"
+        android:hint="@string/repetirPass"
+        android:fontFamily="@font/saira_medium"
+        android:padding="12dp"
+        android:background="@color/white"
+        android:textColorHint="@color/black"
+        app:layout_constraintTop_toBottomOf="@id/etPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_margin="30dp"
-        app:cornerRadius="15dp"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="45dp"
+        />
+
+    <EditText
+        android:id="@+id/etEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/emailReg"
         android:fontFamily="@font/saira_medium"
-        android:text="@string/textLogin"
-        android:textSize="30sp"
-        android:backgroundTint="@color/primary"/>
+        android:padding="12dp"
+        android:background="@color/white"
+        android:textColorHint="@color/black"
+        app:layout_constraintTop_toBottomOf="@id/etPasswordRep"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="45dp"
+        />
 
     <Button
         android:id="@+id/btnRegister"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_margin="30dp"
+        android:layout_margin="50dp"
         android:text="@string/register"
         android:fontFamily="@font/saira_medium"
         android:backgroundTint="@color/primary"
@@ -79,17 +99,8 @@
         app:cornerRadius ="15dp"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
-    <TextView
-        android:id="@+id/noHayCuenta"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@+id/btnRegister"
-        android:text="@string/text_noHayCuenta"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent"
 
-
-
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
