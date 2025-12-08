@@ -23,4 +23,8 @@
 
     <!-- Pagina Forum -->
     <string name="filtra">filtra</string>
+    <string name="imatgeUsuari">Imatge d\'usuari</string>
+    <string name="usuari">Usuari</string>
+    <string name="comentari">Comentari</string>
+    <string name="joc">Joc</string>
 </resources>
