@@ -76,6 +76,8 @@
     <string name="fotos">Fotos</string>
     <string name="video">Videos</string>
     <string name="valoracio">Valoació</string>
+    <string name="like">like</string>
+    <string name="dislike">dislike</string>
 
     <!-- Pagina Preguntes -->
     <string name="preguntaTxt">Text de pregunta sobre un videojoc</string>
