@@ -42,9 +42,7 @@ class MenuActivity : AppCompatActivity() {
     }
 
     private fun initListeners() {
-        ivX.setOnClickListener {
-            finish()
-        }
+        ivX.setOnClickListener { finish() }
 
         tvPgPrincipal.setOnClickListener {
             val intent = Intent(this, PrincipalActivity::class.java)

@@ -104,7 +104,7 @@
         android:src="@drawable/ic_filtra"
         app:tint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/svForum"/>
+        app:layout_constraintBottom_toBottomOf="@+id/edComentari"/>
 
     <ScrollView
         android:id="@+id/svForum"
