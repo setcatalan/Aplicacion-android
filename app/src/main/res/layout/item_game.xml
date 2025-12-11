@@ -12,6 +12,7 @@
         android:id="@+id/item_game_image"
         android:layout_width="60dp"
         android:layout_height="60dp"
+        android:contentDescription="@string/games"
         android:scaleType="centerInside"
         android:src="@drawable/plus_circle_svgrepo_com"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -30,6 +31,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/item_game_image"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TextContrastCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

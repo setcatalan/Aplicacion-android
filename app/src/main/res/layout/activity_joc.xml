@@ -22,30 +22,20 @@
         app:layout_constraintEnd_toEndOf="parent"
         />
 
-    <Button
-        android:id="@+id/btnLogin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/saira_medium"
-        android:backgroundTint="@color/primary"
-        android:text="@string/login"
-        android:textSize="20sp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="10dp"
-        app:cornerRadius="5dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
-
-    <ImageView
-        android:id="@+id/ivMenu"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:contentDescription="@string/menu"
-        android:src="@drawable/ic_menu"
-        android:layout_marginTop="10dp"
-        android:layout_marginStart="10dp"
+    <ImageButton
+        android:id="@+id/ivEnrere"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_margin="10dp"
+        android:contentDescription="@string/enrere"
+        android:src="@drawable/back_svgrepo_com"
+        app:tint="@color/white"
+        android:background="@android:color/transparent"
+        android:foreground="?attr/selectableItemBackgroundBorderless"
+        android:scaleType="fitCenter"
+        android:padding="8dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tvDescripcio"
@@ -53,7 +43,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:text="@string/descripcioJoc"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="30sp"
         android:fontFamily="@font/saira_medium"
         app:layout_constraintTop_toBottomOf="@+id/tvNomJoc"
@@ -66,7 +56,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:text="@string/descripcioTxt"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="20sp"
         android:fontFamily="@font/saira_medium"
         android:gravity="center"
@@ -80,7 +70,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:text="@string/fotos"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="30sp"
         android:fontFamily="@font/saira_medium"
         app:layout_constraintTop_toBottomOf="@+id/tvDescripcioTxt"
@@ -93,6 +83,7 @@
         android:layout_height="wrap_content"
         android:layout_marginVertical="10dp"
         android:layout_marginHorizontal="20dp"
+        android:contentDescription="@string/fotos"
         android:src="@drawable/ic_launcher_foreground"
         android:background="@color/grey"
         app:layout_constraintStart_toStartOf="parent"
@@ -105,6 +96,7 @@
         android:layout_height="wrap_content"
         android:layout_marginVertical="10dp"
         android:layout_marginHorizontal="20dp"
+        android:contentDescription="@string/fotos"
         android:src="@drawable/ic_launcher_foreground"
         android:background="@color/grey"
         app:layout_constraintEnd_toEndOf="parent"
@@ -116,13 +108,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="@string/video"
-        android:textColor="@color/black"
-        android:textSize="30sp"
         android:fontFamily="@font/saira_medium"
-        app:layout_constraintTop_toBottomOf="@+id/ivFoto1"
+        android:text="@string/video"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintTop_toBottomOf="@+id/ivFoto1"
+        tools:ignore="TextContrastCheck" />
 
     <ImageView
         android:id="@+id/ivVideo1"
@@ -130,6 +123,7 @@
         android:layout_height="wrap_content"
         android:layout_marginVertical="10dp"
         android:layout_marginHorizontal="20dp"
+        android:contentDescription="@string/video"
         android:src="@drawable/ic_launcher_foreground"
         android:background="@color/grey"
         app:layout_constraintStart_toStartOf="parent"
@@ -142,20 +136,30 @@
         android:layout_height="wrap_content"
         android:layout_marginVertical="10dp"
         android:layout_marginHorizontal="20dp"
+        android:contentDescription="@string/video"
         android:src="@drawable/ic_launcher_foreground"
         android:background="@color/grey"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/ivVideo1"
         app:layout_constraintTop_toBottomOf="@+id/tvVideos"/>
 
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="30dp"
+        android:orientation="horizontal"
+        android:background="@drawable/slot_background"
+        android:backgroundTint="@color/primary"
+        app:layout_constraintTop_toBottomOf="@+id/ivVideo1"
+        app:layout_constraintStart_toStartOf="parent">
     <TextView
         android:id="@+id/tvValoracio"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="30dp"
         android:text="@string/valoracio"
-        android:textColor="@color/black"
+        android:textColor="@color/text"
         android:textSize="20sp"
         android:fontFamily="@font/saira_medium"
         app:layout_constraintTop_toBottomOf="@+id/ivVideo1"
@@ -165,7 +169,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="30dp"
+        android:contentDescription="@string/like"
         android:src="@drawable/ic_thumb_up"
         app:tint="@color/green"
         app:layout_constraintStart_toEndOf="@+id/tvValoracio"
@@ -174,11 +178,11 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginStart="10dp"
+        android:contentDescription="@string/dislike"
         android:src="@drawable/ic_thumb_down"
         app:tint="@color/red"
         app:layout_constraintStart_toEndOf="@+id/tvValoracio"
         app:layout_constraintTop_toBottomOf="@+id/ivVideo1"/>
-
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
