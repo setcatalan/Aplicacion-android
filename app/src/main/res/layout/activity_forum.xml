@@ -16,7 +16,7 @@
         android:textSize="60sp"
         android:textColor="@color/black"
         android:fontFamily="@font/saira_medium"
-        android:layout_marginTop="60sp"
+        android:layout_marginTop="50sp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
@@ -41,12 +41,14 @@
         android:layout_height="wrap_content"
         android:contentDescription="@string/menu"
         android:src="@drawable/ic_menu"
+        app:tint="@color/white"
         android:layout_marginTop="10dp"
         android:layout_marginStart="10dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
 
     <EditText
+        app:layout_constraintWidth_max="488dp"
         android:id="@+id/edComentari"
         android:layout_width="0dp"
         android:layout_height="50dp"
@@ -70,6 +72,7 @@
         android:layout_height="wrap_content"
         android:contentDescription="@string/filtra"
         android:src="@drawable/ic_filtra"
+        app:tint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/edComentari"
         app:layout_constraintBottom_toTopOf="@id/svForum"/>

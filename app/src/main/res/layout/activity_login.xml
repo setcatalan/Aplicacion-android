@@ -25,8 +25,10 @@
         android:id="@+id/etUser"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:autofillHints=""
         android:hint="@string/nombreUsuario"
         android:fontFamily="@font/saira_medium"
+        android:inputType="text"
         android:padding="12dp"
         android:background="@color/white"
         android:textColorHint="@color/black"
@@ -34,14 +36,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginHorizontal="30dp"
-        android:layout_marginBottom="200dp"/>
+        android:layout_marginBottom="200dp"
+        tools:ignore="VisualLintTextFieldSize" />
 
     <EditText
         android:id="@+id/etPass"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:autofillHints=""
         android:hint="@string/passUsuario"
         android:fontFamily="@font/saira_medium"
+        android:inputType="text"
         android:padding="12dp"
         android:background="@color/white"
         android:textColorHint="@color/black"
@@ -49,7 +54,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginHorizontal="30dp"
-        android:layout_marginBottom="100dp"/>
+        android:layout_marginBottom="100dp"
+        tools:ignore="VisualLintTextFieldSize" />
 
 
     <Button
@@ -64,7 +70,8 @@
         android:fontFamily="@font/saira_medium"
         android:text="@string/textLogin"
         android:textSize="30sp"
-        android:backgroundTint="@color/primary"/>
+        android:backgroundTint="@color/primary"
+        tools:ignore="VisualLintButtonSize" />
 
     <Button
         android:id="@+id/btnRegister"
@@ -79,13 +86,15 @@
         app:cornerRadius ="15dp"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="VisualLintButtonSize" />
     <TextView
         android:id="@+id/noHayCuenta"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toTopOf="@+id/btnRegister"
         android:text="@string/text_noHayCuenta"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"/>
 
