@@ -28,6 +28,9 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toTopOf="@+id/btnSeguent"
         app:layout_constraintStart_toStartOf="parent"
+        android:padding="50dp"
+        android:background="@drawable/slot_background"
+        android:backgroundTint="@color/fondoIdioma"
         app:layout_constraintEnd_toEndOf="parent">
 
         <TextView
