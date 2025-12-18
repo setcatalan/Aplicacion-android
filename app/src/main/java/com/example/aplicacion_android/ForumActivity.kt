@@ -46,6 +46,8 @@ class ForumActivity : AppCompatActivity() {
             comentaris,
             { comentari ->
                 val intent = Intent(this, ComentariActivity::class.java)
+                intent.putExtra("comentari", comentari.comentari)
+                intent.putExtra("usuari", comentari.usuari)
                 startActivity(intent)
             }
         )
