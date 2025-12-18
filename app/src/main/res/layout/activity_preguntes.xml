@@ -41,6 +41,7 @@
         android:layout_height="wrap_content"
         android:contentDescription="@string/menu"
         android:src="@drawable/ic_menu"
+        app:tint="@color/white"
         android:layout_marginTop="10dp"
         android:layout_marginStart="10dp"
         app:layout_constraintStart_toStartOf="parent"
@@ -53,7 +54,7 @@
         android:contentDescription="@string/filtra"
         android:src="@drawable/ic_filtra"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/edComentari"
+        app:tint="@color/white"
         app:layout_constraintBottom_toTopOf="@id/svForum"/>
 
     <ScrollView
