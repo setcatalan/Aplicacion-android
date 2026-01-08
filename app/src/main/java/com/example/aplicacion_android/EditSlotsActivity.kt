@@ -43,7 +43,9 @@ class EditSlotsActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        btn_close_edit.setOnClickListener { finish() }
+        btn_close_edit.setOnClickListener {
+            finish()
+        }
 
         btn_save_slot.setOnClickListener {
             finish()

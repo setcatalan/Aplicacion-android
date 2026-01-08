@@ -12,7 +12,7 @@ import androidx.core.view.WindowInsetsCompat
 
 class ComentariActivity : AppCompatActivity() {
 
-    private lateinit var ivMenu: ImageView
+    private lateinit var btn_close_edit: ImageView
     private lateinit var btnLogin: Button
     private lateinit var tvUsuari: TextView
     private lateinit var tvComentari: TextView
@@ -32,7 +32,7 @@ class ComentariActivity : AppCompatActivity() {
     }
 
     private fun initComponents() {
-        ivMenu = findViewById(R.id.ivMenu)
+        btn_close_edit = findViewById<ImageView>(R.id.btn_close_edit)
         btnLogin = findViewById(R.id.btnLogin)
         tvUsuari = findViewById(R.id.tvUsuari)
         tvComentari = findViewById(R.id.tvComentari)
@@ -44,9 +44,8 @@ class ComentariActivity : AppCompatActivity() {
     }
 
     private fun initListeners() {
-        ivMenu.setOnClickListener {
-            val intent = Intent(this, MenuActivity::class.java)
-            startActivity(intent)
+        btn_close_edit.setOnClickListener {
+            finish()
         }
 
         btnLogin.setOnClickListener {

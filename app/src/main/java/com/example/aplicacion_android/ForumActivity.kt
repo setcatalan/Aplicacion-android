@@ -2,9 +2,11 @@ package com.example.aplicacion_android
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import android.widget.Adapter
 import android.widget.Button
 import android.widget.ImageView
+import android.widget.LinearLayout
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -16,6 +18,8 @@ class ForumActivity : AppCompatActivity() {
 
     private lateinit var ivMenu: ImageView
     private lateinit var btnLogin: Button
+    private lateinit var ivFiltra: ImageView
+    private lateinit var llFiltre: LinearLayout
 
     private lateinit var rvComentaris: RecyclerView
     private lateinit var adapter: ComentariAdapter
@@ -36,6 +40,8 @@ class ForumActivity : AppCompatActivity() {
     private fun initComponents() {
         ivMenu = findViewById(R.id.ivMenu)
         btnLogin = findViewById(R.id.btnLogin)
+        ivFiltra = findViewById<ImageView>(R.id.ivFiltra)
+        llFiltre = findViewById<LinearLayout>(R.id.llFiltre)
 
         rvComentaris = findViewById(R.id.rvComentaris)
         rvComentaris.layoutManager = LinearLayoutManager(this)
@@ -64,6 +70,10 @@ class ForumActivity : AppCompatActivity() {
         btnLogin.setOnClickListener {
             val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
+        }
+
+        ivFiltra.setOnClickListener {
+            llFiltre.visibility = View.VISIBLE
         }
     }
 }

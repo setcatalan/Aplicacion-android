@@ -11,6 +11,8 @@ import androidx.core.view.WindowInsetsCompat
 
 class UserActivity : AppCompatActivity() {
 
+    private lateinit var btn_close_edit: ImageView
+
     private lateinit var ivSlot1: ImageView
     private lateinit var ivSlot2: ImageView
     private lateinit var ivSlot3: ImageView
@@ -35,6 +37,7 @@ class UserActivity : AppCompatActivity() {
     }
 
     private fun initComponents() {
+        btn_close_edit = findViewById<ImageView>(R.id.btn_close_edit)
         ivSlot1 = findViewById<ImageView>(R.id.slot1)
         ivSlot2 = findViewById<ImageView>(R.id.slot2)
         ivSlot3 = findViewById<ImageView>(R.id.slot3)
@@ -45,6 +48,10 @@ class UserActivity : AppCompatActivity() {
     }
 
     private fun initListenes() {
+        btn_close_edit.setOnClickListener {
+            finish()
+        }
+
         ivSlot1.setOnClickListener {
             val intent = Intent(this, EditSlotsActivity::class.java)
             startActivity(intent)
