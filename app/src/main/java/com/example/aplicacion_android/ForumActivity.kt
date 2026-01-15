@@ -2,24 +2,29 @@ package com.example.aplicacion_android
 
 import android.content.Intent
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.View
-import android.widget.Adapter
 import android.widget.Button
+import android.widget.EditText
 import android.widget.ImageView
-import android.widget.LinearLayout
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import androidx.core.view.isGone
+import androidx.core.view.isVisible
 
 class ForumActivity : AppCompatActivity() {
 
     private lateinit var ivMenu: ImageView
     private lateinit var btnLogin: Button
     private lateinit var ivFiltra: ImageView
-    private lateinit var llFiltre: LinearLayout
+    private lateinit var etFiltre: EditText
+    private lateinit var tvSinResultados: TextView
 
     private lateinit var rvComentaris: RecyclerView
     private lateinit var adapter: ComentariAdapter
@@ -40,8 +45,9 @@ class ForumActivity : AppCompatActivity() {
     private fun initComponents() {
         ivMenu = findViewById(R.id.ivMenu)
         btnLogin = findViewById(R.id.btnLogin)
-        ivFiltra = findViewById<ImageView>(R.id.ivFiltra)
-        llFiltre = findViewById<LinearLayout>(R.id.llFiltre)
+        ivFiltra = findViewById(R.id.ivFiltra)
+        etFiltre = findViewById(R.id.etFiltre)
+        tvSinResultados = findViewById(R.id.tvSinResultados)
 
         rvComentaris = findViewById(R.id.rvComentaris)
         rvComentaris.layoutManager = LinearLayoutManager(this)
@@ -50,13 +56,16 @@ class ForumActivity : AppCompatActivity() {
 
         adapter = ComentariAdapter(
             comentaris,
-            { comentari ->
+            onItemClik = { comentari ->
                 val intent = Intent(this, ComentariActivity::class.java)
                 intent.putExtra("comentari", comentari.comentari)
                 intent.putExtra("usuari", comentari.usuari)
                 startActivity(intent)
             }
-        )
+        ) { hayResultados ->
+            rvComentaris.isVisible = hayResultados
+            tvSinResultados.isVisible = !hayResultados
+        }
 
         rvComentaris.adapter = adapter
     }
@@ -73,7 +82,19 @@ class ForumActivity : AppCompatActivity() {
         }
 
         ivFiltra.setOnClickListener {
-            llFiltre.visibility = View.VISIBLE
+            if (etFiltre.isGone) {
+                etFiltre.visibility = View.VISIBLE
+            } else if (etFiltre.isVisible){
+                etFiltre.visibility = View.GONE
+            }
         }
+
+        etFiltre.addTextChangedListener(object : TextWatcher{
+            override fun afterTextChanged(s: Editable?) {}
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                adapter.filter?.filter(s)
+            }
+        })
     }
 }

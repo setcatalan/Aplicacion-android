@@ -29,9 +29,7 @@
     <string name="comentari">Comentari</string>
     <string name="joc">Joc</string>
     <string name="escriuComentari">Escriu aqui el teu Comentari</string>
-
-    <string name="compartits">Compartits</string>
-    <string name="comentaris">Comentaris</string>
+    <string name="ningunComentari">No s\'ha torbat cap comentari</string>
 
     <!-- Pagina Log in -->
     <string name="register">Registrar-se</string>
