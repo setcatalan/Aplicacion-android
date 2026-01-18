@@ -4,21 +4,27 @@ import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.view.MenuItem
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
+import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.GravityCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.core.view.isGone
 import androidx.core.view.isVisible
+import androidx.drawerlayout.widget.DrawerLayout
+import com.google.android.material.navigation.NavigationView
 
-class ForumActivity : AppCompatActivity() {
+class ForumActivity : AppCompatActivity(){
 
     private lateinit var ivMenu: ImageView
     private lateinit var btnLogin: Button
@@ -96,5 +102,6 @@ class ForumActivity : AppCompatActivity() {
                 adapter.filter?.filter(s)
             }
         })
+
     }
 }
