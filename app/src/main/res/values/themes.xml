@@ -6,4 +6,11 @@
     </style>
 
     <style name="Theme.Aplicacionandroid" parent="Base.Theme.Aplicacionandroid" />
+
+    <style name="Theme.App.SplashScreen" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/fondoSplashScreen</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/gameverse_logotype</item>
+        <item name="postSplashScreenTheme">@style/Base.Theme.Aplicacionandroid</item>
+        <item name="windowSplashScreenAnimationDuration">1000</item>
+    </style>
 </resources>

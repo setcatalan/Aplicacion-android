@@ -12,6 +12,10 @@
     <color name="error">#BA3C3C</color>
     <color name="fondoSlots">#A09E9E</color>
 
+
+    <color name="fondoSplashScreen">#254462</color>
+
+
     <color name="fondoIdioma">#D1E4F8</color>
 
 </resources>
