@@ -1,8 +1,10 @@
 package com.example.aplicacion_android
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -30,6 +32,8 @@ class JocsActivity: AppCompatActivity() {
 
     private var selectedCategory: Category = Category.TOTS
     private var searchText: String = ""
+    private lateinit var ivMenu: ImageView
+    private lateinit var btnLogin: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -66,6 +70,8 @@ class JocsActivity: AppCompatActivity() {
             selectedCategory = Category.AVENTURA
             applyFilters()
         }
+        initComponents()
+        initListeners()
     }
 
     private fun applyFilters() {
@@ -77,5 +83,22 @@ class JocsActivity: AppCompatActivity() {
                 game.name.contains(searchText, ignoreCase = true)
             }
         adapter.updateList(filtered)
+    }
+
+    private fun initComponents() {
+        ivMenu = findViewById<ImageView>(R.id.ivMenu)
+        btnLogin = findViewById<Button>(R.id.btnLogin)
+    }
+
+    private fun initListeners() {
+        ivMenu.setOnClickListener {
+            val intent = Intent(this, MenuActivity::class.java)
+            startActivity(intent)
+        }
+
+        btnLogin.setOnClickListener {
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
+        }
     }
 }
