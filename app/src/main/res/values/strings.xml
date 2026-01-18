@@ -29,6 +29,7 @@
     <string name="comentari">Comentari</string>
     <string name="joc">Joc</string>
     <string name="escriuComentari">Escriu aqui el teu Comentari</string>
+    <string name="ningunComentari">No s\'ha torbat cap comentari</string>
 
     <!-- Pagina Log in -->
     <string name="register">Registrar-se</string>
@@ -75,7 +76,7 @@
     <string name="descripcioTxt">Text sobre la descripció del videojoc</string>
     <string name="fotos">Fotos</string>
     <string name="video">Videos</string>
-    <string name="valoracio">Valoació</string>
+    <string name="valoracio">Valoració</string>
     <string name="like">like</string>
     <string name="dislike">dislike</string>
 
@@ -87,4 +88,6 @@
     <!-- Pagina ajuda -->
     <string name="preguntesFrequents">Preguntes Freqüents</string>
     <string name="preguntaFrequent">Pregunta Freqüent</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

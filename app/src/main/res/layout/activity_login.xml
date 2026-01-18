@@ -8,6 +8,19 @@
     tools:context=".LoginActivity"
     android:background="@drawable/fondo_difuminado">
 
+    <ImageButton
+        android:id="@+id/btn_close_edit"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_margin="16dp"
+        android:contentDescription="@string/menu"
+        android:src="@drawable/back_svgrepo_com"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        app:tint="@color/white"
+        android:scaleType="centerInside"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
     <TextView
         android:id="@+id/tituloLogin"
         android:layout_width="wrap_content"

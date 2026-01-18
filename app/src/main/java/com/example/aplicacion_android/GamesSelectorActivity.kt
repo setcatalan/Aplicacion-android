@@ -29,6 +29,8 @@ class GamesSelectorActivity : AppCompatActivity() {
     }
 
     private fun initListeners() {
-        btn_back_selector.setOnClickListener { finish() }
+        btn_back_selector.setOnClickListener {
+            finish()
+        }
     }
 }
