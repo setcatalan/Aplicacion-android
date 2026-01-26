@@ -45,11 +45,12 @@
         android:padding="12dp"
         android:background="@color/white"
         android:textColorHint="@color/black"
-        app:layout_constraintBottom_toTopOf="@id/btnConfirmarLogin"
+        app:layout_constraintTop_toBottomOf="@+id/tituloLogin"
+        app:layout_constraintBottom_toTopOf="@id/etPass"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginHorizontal="30dp"
-        android:layout_marginBottom="200dp"
+        android:layout_marginTop="50dp"
         tools:ignore="VisualLintTextFieldSize" />
 
     <EditText
@@ -64,10 +65,11 @@
         android:background="@color/white"
         android:textColorHint="@color/black"
         app:layout_constraintBottom_toTopOf="@id/btnConfirmarLogin"
+        app:layout_constraintTop_toBottomOf="@+id/etUser"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginHorizontal="30dp"
-        android:layout_marginBottom="100dp"
+        android:layout_marginBottom="50dp"
         tools:ignore="VisualLintTextFieldSize" />
 
 
