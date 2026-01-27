@@ -50,7 +50,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginHorizontal="30dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="150dp"
         tools:ignore="VisualLintTextFieldSize" />
 
     <EditText
@@ -60,7 +60,7 @@
         android:autofillHints=""
         android:hint="@string/passUsuario"
         android:fontFamily="@font/saira_medium"
-        android:inputType="text"
+        android:inputType="textPassword"
         android:padding="12dp"
         android:background="@color/white"
         android:textColorHint="@color/black"
@@ -69,7 +69,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginHorizontal="30dp"
-        android:layout_marginBottom="50dp"
+        android:layout_marginBottom="100dp"
         tools:ignore="VisualLintTextFieldSize" />
 
 

@@ -16,6 +16,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
+// Classe ViewModel per al Login
 class LoginViewModel: ViewModel() {
     private val _nomUsuari = MutableLiveData<String>()
     private val _contrasenya = MutableLiveData<String>()
@@ -51,10 +52,10 @@ class LoginActivity : AppCompatActivity() {
             insets
         }
 
+        // Utilitzant el observe del ViewModel estableix el text del EditText en el valor del LiveData
         loginViewModel.nomUsuari.observe(this){ nomUsuari ->
             etUser.hint = nomUsuari
         }
-
         loginViewModel.contrasenya.observe(this){ contrasenya ->
             etPass.hint = contrasenya
         }
@@ -87,6 +88,7 @@ class LoginActivity : AppCompatActivity() {
             finish()
         }
 
+        // Quan el text del EditText canvia, també canvia el contingut del LiveData del ViewModel
         etUser.addTextChangedListener(object: TextWatcher{
             override fun afterTextChanged(s: Editable?) {}
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
