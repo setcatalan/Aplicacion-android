@@ -7,30 +7,12 @@ import android.text.TextWatcher
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
-
-// Classe ViewModel per al Login
-class LoginViewModel: ViewModel() {
-    private val _nomUsuari = MutableLiveData<String>()
-    private val _contrasenya = MutableLiveData<String>()
-    val nomUsuari: LiveData<String> = _nomUsuari
-    val contrasenya: LiveData<String> = _contrasenya
-
-    fun canviNom(nom: String){
-        _nomUsuari.value = nom
-    }
-
-    fun canviContra(contra: String){
-        _contrasenya.value = contra
-    }
-}
 
 class LoginActivity : AppCompatActivity() {
 
@@ -54,10 +36,18 @@ class LoginActivity : AppCompatActivity() {
 
         // Utilitzant el observe del ViewModel estableix el text del EditText en el valor del LiveData
         loginViewModel.nomUsuari.observe(this){ nomUsuari ->
-            etUser.hint = nomUsuari
+            if (nomUsuari.isEmpty()){
+                etUser.hint = getString(R.string.nombreUsuario)
+            } else {
+                etUser.hint = nomUsuari
+            }
         }
         loginViewModel.contrasenya.observe(this){ contrasenya ->
-            etPass.hint = contrasenya
+            if (contrasenya.isEmpty()){
+                etPass.hint = getString(R.string.passUsuario)
+            } else {
+                etPass.hint = contrasenya
+            }
         }
 
         initComponents()
@@ -83,9 +73,13 @@ class LoginActivity : AppCompatActivity() {
         }
 
         btnConfirmarLogin.setOnClickListener {
-            val intent = Intent(this, UserActivity::class.java)
-            startActivity(intent)
-            finish()
+            if (loginViewModel.comprovacioUsuari()) {
+                val intent = Intent(this, UserActivity::class.java)
+                startActivity(intent)
+                finish()
+            } else {
+                Toast.makeText(this, "Usuari o contrasenya equivocats", Toast.LENGTH_SHORT).show()
+            }
         }
 
         // Quan el text del EditText canvia, també canvia el contingut del LiveData del ViewModel
