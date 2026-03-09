@@ -15,52 +15,52 @@
         android:theme="@style/Theme.Aplicacionandroid"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".UsersActivity"
+            android:name=".User.UsersActivity"
             android:exported="false" />
         <activity
-            android:name=".AjudaActivity"
+            android:name=".Ajuda.AjudaActivity"
             android:exported="false" />
         <activity
-            android:name=".RespostesActivity"
+            android:name=".Preguntes.RespostesActivity"
             android:exported="false" />
         <activity
-            android:name=".PreguntesActivity"
+            android:name=".Preguntes.PreguntesActivity"
             android:exported="false" />
         <activity
-            android:name=".ComentariActivity"
+            android:name=".Forum.ComentariActivity"
             android:exported="false" />
         <activity
-            android:name=".JocActivity"
+            android:name=".Jocs.JocActivity"
             android:exported="false" />
         <activity
-            android:name=".ForumActivity"
+            android:name=".Forum.ForumActivity"
             android:exported="false" />
         <activity
-            android:name=".MenuActivity"
+            android:name=".Main.MenuActivity"
             android:exported="false" />
         <activity
-            android:name=".PrincipalActivity"
+            android:name=".Main.PrincipalActivity"
             android:exported="false" />
         <activity
-            android:name=".JocsActivity"
+            android:name=".Jocs.JocsActivity"
             android:exported="false" />
         <activity
-            android:name=".GamesSelectorActivity"
+            android:name=".Jocs.GamesSelectorActivity"
             android:exported="false" />
         <activity
-            android:name=".EditSlotsActivity"
+            android:name=".User.EditSlotsActivity"
             android:exported="false" />
         <activity
-            android:name=".UserActivity"
+            android:name=".User.UserActivity"
             android:exported="false" />
         <activity
-            android:name=".RegisterActivity"
+            android:name=".Login.RegisterActivity"
             android:exported="false" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".Login.LoginActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".Main.MainActivity"
             android:exported="true"
             android:theme="@style/Theme.App.SplashScreen">
             <intent-filter>

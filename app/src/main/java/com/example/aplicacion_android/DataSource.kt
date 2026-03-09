@@ -1,5 +1,7 @@
 package com.example.aplicacion_android
 
+import com.example.aplicacion_android.Forum.Comentari
+
 object DataSource {
     val comentaris: List<Comentari> = listOf(
         Comentari("Usuari1", "Expedition 33 GOTY", "Expedition 33"),
