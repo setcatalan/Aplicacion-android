@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/fondo_difuminado"
-    tools:context=".JocActivity">
+    tools:context=".Jocs.JocActivity">
 
     <TextView
         android:id="@+id/tvNomJoc"

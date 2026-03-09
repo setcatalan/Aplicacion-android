@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -10,55 +12,60 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Aplicacionandroid">
+        android:theme="@style/Theme.Aplicacionandroid"
+        android:usesCleartextTraffic="true">
         <activity
-            android:name=".AjudaActivity"
+            android:name=".User.UsersActivity"
             android:exported="false" />
         <activity
-            android:name=".RespostesActivity"
+            android:name=".Ajuda.AjudaActivity"
             android:exported="false" />
         <activity
-            android:name=".PreguntesActivity"
+            android:name=".Preguntes.RespostesActivity"
             android:exported="false" />
         <activity
-            android:name=".ComentariActivity"
+            android:name=".Preguntes.PreguntesActivity"
             android:exported="false" />
         <activity
-            android:name=".JocActivity"
+            android:name=".Forum.ComentariActivity"
             android:exported="false" />
         <activity
-            android:name=".ForumActivity"
+            android:name=".Jocs.JocActivity"
             android:exported="false" />
         <activity
-            android:name=".MenuActivity"
+            android:name=".Forum.ForumActivity"
             android:exported="false" />
         <activity
-            android:name=".PrincipalActivity"
+            android:name=".Main.MenuActivity"
             android:exported="false" />
         <activity
-            android:name=".JocsActivity"
+            android:name=".Main.PrincipalActivity"
             android:exported="false" />
         <activity
-            android:name=".GamesSelectorActivity"
+            android:name=".Jocs.JocsActivity"
             android:exported="false" />
         <activity
-            android:name=".EditSlotsActivity"
+            android:name=".Jocs.GamesSelectorActivity"
             android:exported="false" />
         <activity
-            android:name=".UserActivity"
+            android:name=".User.EditSlotsActivity"
             android:exported="false" />
         <activity
-            android:name=".RegisterActivity"
+            android:name=".User.UserActivity"
             android:exported="false" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".Login.RegisterActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".Login.LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Main.MainActivity"
             android:exported="true"
             android:theme="@style/Theme.App.SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
