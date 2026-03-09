@@ -3,6 +3,7 @@ package com.example.aplicacion_android
 import android.content.Intent
 import android.os.Bundle
 import android.view.View.GONE
+import android.widget.Button
 import android.widget.ImageView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -20,6 +21,8 @@ class UserActivity : AppCompatActivity() {
     private lateinit var ivDelSlot1: ImageView
     private lateinit var ivDelSlot2: ImageView
     private lateinit var ivDelSlot3: ImageView
+
+    private lateinit var btnUsuaris: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,6 +47,7 @@ class UserActivity : AppCompatActivity() {
         ivDelSlot1 = findViewById<ImageView>(R.id.delete_slot1)
         ivDelSlot2 = findViewById<ImageView>(R.id.delete_slot2)
         ivDelSlot3 = findViewById<ImageView>(R.id.delete_slot3)
+        btnUsuaris = findViewById<Button>(R.id.btnUsuaris)
 
     }
 
@@ -64,6 +68,11 @@ class UserActivity : AppCompatActivity() {
 
         ivSlot3.setOnClickListener {
             val intent = Intent(this, EditSlotsActivity::class.java)
+            startActivity(intent)
+        }
+
+        btnUsuaris.setOnClickListener {
+            val intent = Intent(this, UsersActivity::class.java)
             startActivity(intent)
         }
     }

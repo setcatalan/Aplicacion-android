@@ -60,6 +60,8 @@ class LoginActivity : AppCompatActivity() {
         btnConfirmarLogin = findViewById(R.id.btnConfirmarLogin)
         etUser = findViewById(R.id.etUser)
         etPass = findViewById(R.id.etPass)
+
+        loginViewModel.carregarUsuaris()
     }
 
     private fun initListeners() {

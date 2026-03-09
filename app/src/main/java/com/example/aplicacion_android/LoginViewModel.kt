@@ -1,8 +1,11 @@
 package com.example.aplicacion_android
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import kotlinx.coroutines.launch
 
 // Classe ViewModel per al Login
 class LoginViewModel: ViewModel() {
@@ -10,6 +13,8 @@ class LoginViewModel: ViewModel() {
     private val _contrasenya = MutableLiveData<String>()
     val nomUsuari: LiveData<String> = _nomUsuari
     val contrasenya: LiveData<String> = _contrasenya
+
+    private lateinit var llistaUsuaris: List<Usuari>
 
     fun canviNom(nom: String){
         _nomUsuari.value = nom
@@ -19,9 +24,25 @@ class LoginViewModel: ViewModel() {
         _contrasenya.value = contra
     }
 
+    fun carregarUsuaris(){
+        viewModelScope.launch {
+            try {
+                val response = UsuariAPI.API().llistaUsuaris()
+
+                if (response.isSuccessful) {
+                    llistaUsuaris = response.body() ?: emptyList()
+                } else {
+                    Log.e("API", "Error HTTP: ${response.code()}")
+                }
+            } catch (e: Exception) {
+                Log.e("API", "Error de connexió")
+            }
+        }
+    }
+
     fun comprovacioUsuari(): Boolean{
-        for (usuari in DataSource.usuaris){
-            if ((usuari.nomUsuari == _nomUsuari.value) and (usuari.contrasenya == _contrasenya.value)){
+        for (usuari in llistaUsuaris){
+            if ((usuari.nom == _nomUsuari.value) and (usuari.contra == _contrasenya.value)){
                 return true
             }
         }

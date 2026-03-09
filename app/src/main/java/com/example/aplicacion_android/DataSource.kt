@@ -8,10 +8,4 @@ object DataSource {
         Comentari("Usuari4", "Quien esta listo para el Evento?", "Fortnite"),
         Comentari("Usuari5", "Me salió Qiqi otra vez 😭", "Genshin Impact")
     )
-
-    val usuaris: List<Usuari> = listOf(
-        Usuari("Usuari1", "hola12"),
-        Usuari("Usuari2", "12hola"),
-        Usuari("Usuari3", "1hola2")
-    )
 }
