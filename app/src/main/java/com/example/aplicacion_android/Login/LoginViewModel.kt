@@ -50,4 +50,13 @@ class LoginViewModel: ViewModel() {
         }
         return false
     }
+
+    fun getIdUsari(): Int{
+        for (usuari in llistaUsuaris){
+            if ((usuari.nom == _nomUsuari.value) and (usuari.contra == _contrasenya.value)){
+                return usuari.id
+            }
+        }
+        return -1
+    }
 }

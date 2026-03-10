@@ -48,11 +48,14 @@
 
     <!-- Pagina Usuari -->
     <string name="nomUser">Nom Usuari</string>
-    <string name="nombre">Nom: Usuari</string>
-    <string name="cognom">Cognom: Qualsevol</string>
-    <string name="edad">Edat: 20</string>
-    <string name="sexe">Sexe: Masculí</string>
-    <string name="descripcio">Descripció: Aquí l\'usuari posarà el que ell vol, ja sigui relacionat amb els videojocs o la seva vida</string>
+    <string name="nombre">Nom:</string>
+    <string name="nomDefault">nom</string>
+    <string name="edad">Edat:</string>
+    <string name="edadDefault">edat</string>
+    <string name="sexe">Sexe:</string>
+    <string name="sexeDefault">sexe</string>
+    <string name="descripcio">Descripció:</string>
+    <string name="descDefault">desc</string>
     <string name="videoFav">Els 3 videojocs preferits:</string>
     <string name="slot1">slot 1</string>
     <string name="slot2">slot 2</string>

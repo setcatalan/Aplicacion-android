@@ -79,6 +79,7 @@ class LoginActivity : AppCompatActivity() {
         btnConfirmarLogin.setOnClickListener {
             if (loginViewModel.comprovacioUsuari()) {
                 val intent = Intent(this, UserActivity::class.java)
+                intent.putExtra("id", loginViewModel.getIdUsari())
                 startActivity(intent)
                 finish()
             } else {

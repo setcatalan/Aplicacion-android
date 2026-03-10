@@ -5,6 +5,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.aplicacion_android.R
+import com.squareup.picasso.Picasso
 
 class UsersViewHolder(
     userView: View
