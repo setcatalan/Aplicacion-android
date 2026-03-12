@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey"
+    tools:context=".User.DadesUsuariActivity">
+
+    <ImageButton
+        android:id="@+id/btnClose"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_margin="16dp"
+        android:contentDescription="@string/menu"
+        android:src="@drawable/back_svgrepo_com"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        app:tint="@color/white"
+        android:scaleType="centerInside"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tvNom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/nomDefault"
+        android:textColor="@color/text"
+        android:textSize="50sp"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@+id/btnClose"/>
+
+    <TextView
+        android:id="@+id/texto_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:text="@string/id"
+        android:textColor="@color/text"
+        android:textSize="30sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvNom"/>
+
+    <TextView
+        android:id="@+id/tvId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="@string/idDefault"
+        android:textColor="@color/text"
+        android:textSize="30sp"
+        app:layout_constraintStart_toEndOf="@+id/texto_id"
+        app:layout_constraintTop_toBottomOf="@+id/tvNom"/>
+
+    <TextView
+        android:id="@+id/texto_edat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="15dp"
+        android:text="@string/edad"
+        android:textColor="@color/text"
+        android:textSize="30sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvId"/>
+
+    <TextView
+        android:id="@+id/tvEdat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="15dp"
+        android:text="@string/edadDefault"
+        android:textColor="@color/text"
+        android:textSize="30sp"
+        app:layout_constraintStart_toEndOf="@+id/texto_edat"
+        app:layout_constraintTop_toBottomOf="@+id/tvId"/>
+
+    <TextView
+        android:id="@+id/texto_sexe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="15dp"
+        android:text="@string/sexe"
+        android:textColor="@color/text"
+        android:textSize="30sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvEdat"/>
+
+    <TextView
+        android:id="@+id/tvSexe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="15dp"
+        android:text="@string/sexeDefault"
+        android:textColor="@color/text"
+        android:textSize="30sp"
+        app:layout_constraintStart_toEndOf="@+id/texto_sexe"
+        app:layout_constraintTop_toBottomOf="@+id/tvEdat"/>
+
+    <TextView
+        android:id="@+id/texto_contra"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="15dp"
+        android:text="@string/contra"
+        android:textColor="@color/text"
+        android:textSize="30sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvSexe"/>
+
+    <TextView
+        android:id="@+id/tvContra"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="15dp"
+        android:text="@string/contraDefault"
+        android:textColor="@color/text"
+        android:textSize="30sp"
+        app:layout_constraintStart_toEndOf="@+id/texto_contra"
+        app:layout_constraintTop_toBottomOf="@+id/tvSexe"/>
+
+    <TextView
+        android:id="@+id/texto_desc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="15dp"
+        android:text="@string/descripcio"
+        android:textColor="@color/text"
+        android:textSize="30sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvContra"/>
+
+    <TextView
+        android:id="@+id/tvDesc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/descDefault"
+        android:textColor="@color/text"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/texto_desc"/>
+
+    <Button
+        android:id="@+id/btnElimina"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="@string/elimina"
+        android:textSize="20sp"
+        android:backgroundTint="@color/error"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

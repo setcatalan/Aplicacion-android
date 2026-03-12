@@ -15,6 +15,9 @@
         android:theme="@style/Theme.Aplicacionandroid"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".User.DadesUsuariActivity"
+            android:exported="false" />
+        <activity
             android:name=".User.UsersActivity"
             android:exported="false" />
         <activity

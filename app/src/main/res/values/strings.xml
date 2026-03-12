@@ -56,6 +56,11 @@
     <string name="sexeDefault">sexe</string>
     <string name="descripcio">Descripció:</string>
     <string name="descDefault">desc</string>
+    <string name="id">Id:</string>
+    <string name="idDefault">0</string>
+    <string name="contra">Contrasenya:</string>
+    <string name="contraDefault">contra</string>
+    <string name="elimina">Borra Usuari</string>
     <string name="videoFav">Els 3 videojocs preferits:</string>
     <string name="slot1">slot 1</string>
     <string name="slot2">slot 2</string>
