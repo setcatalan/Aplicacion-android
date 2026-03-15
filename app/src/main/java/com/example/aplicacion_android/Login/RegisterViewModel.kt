@@ -1,9 +1,15 @@
 package com.example.aplicacion_android.Login
 
+import android.util.Log
+import android.util.Log.e
 import android.util.Patterns
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import com.example.aplicacion_android.User.Sexe
+import com.example.aplicacion_android.User.UsuariAPI
+import kotlinx.coroutines.launch
 
 /*Esta clase se encarga de gestionar la lógica de negocio del formulario
 * de registro y de mantener el estado de la UI de forma independiente
@@ -15,8 +21,15 @@ class RegisterViewModel : ViewModel() {
     //MutableLiveData contiene el estado del formulario, solo el ViewModel puede modificar
     private val _formState = MutableLiveData(RegisterFormState())
 
+
     //LiveData publico y inmutable, expone el estado del formulario a la Activity
     val formState: LiveData<RegisterFormState> = _formState
+
+    private val _registerOk = MutableLiveData<Boolean>()
+    val registerOk: LiveData<Boolean> = _registerOk
+
+    private val _errorMessage = MutableLiveData<String>()
+    val errorMessage: LiveData<String> = _errorMessage
 
     private var user: String = ""
     private var pass: String = ""
@@ -63,6 +76,41 @@ class RegisterViewModel : ViewModel() {
             emailError = emailError,
             isDataValid = valid
         )
+    }
+
+    fun registerUser() {
+        validate()
+        if (_formState.value?.isDataValid != true) {
+            _registerOk.value = false
+            _errorMessage.value = "Formulario no válido"
+            return
+        }
+
+        val nouUsuari = UsuariRequest(
+            nom = user,
+            edat = 18,
+            sexe = Sexe.masculí,
+            contra = "hola123",
+        )
+
+        viewModelScope.launch {
+            try {
+                val response = UsuariAPI.API().registrarUsuari(nouUsuari)
+
+                if (response.isSuccessful) {
+                    _registerOk.value = true
+                    _errorMessage.value = ""
+                } else {
+                    _registerOk.value = false
+                    _errorMessage.value = "Error HTTP: ${response.code()}"
+                    Log.e("API", "Error HTTP: ${response.code()}")
+                }
+            } catch (e: Exception) {
+                _registerOk.value = false
+                _errorMessage.value = "Error de conexión"
+                Log.e("API", "Error de conexión", e)
+            }
+        }
     }
 
     //estas funciones validan cada campo que hay

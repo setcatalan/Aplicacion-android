@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageButton
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
@@ -63,9 +64,7 @@ class RegisterActivity : AppCompatActivity() {
         etEmail.doAfterTextChanged { viewModel.onEmailChanged(it) }
 
         btnRegister.setOnClickListener {
-            val intent = Intent(this, UserActivity::class.java)
-            startActivity(intent)
-            finish()
+            viewModel.registerUser()
         }
     }
 
@@ -78,5 +77,22 @@ class RegisterActivity : AppCompatActivity() {
 
             btnRegister.isEnabled = state.isDataValid
         }
+
+        viewModel.registerOk.observe(this) { ok ->
+            if (ok) {
+                Toast.makeText(this, "Usuario registrado correctamente", Toast.LENGTH_SHORT).show()
+                val intent = Intent(this, UserActivity::class.java)
+                startActivity(intent)
+                finish()
+            }
+        }
+
+        viewModel.errorMessage.observe(this) { msg ->
+            if (msg.isNotEmpty()) {
+                Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
+            }
+        }
     }
+
+
 }
