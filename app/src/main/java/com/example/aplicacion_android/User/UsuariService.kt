@@ -11,7 +11,7 @@ interface UsuariService {
     @GET("get/all")
     suspend fun llistaUsuaris(): Response<List<Usuari>>
 
-    @POST("usuaris/")
+    @POST("create/usuari")
     suspend fun registrarUsuari (
         @Body nouUsuari: UsuariRequest
     ): Response<Usuari>
