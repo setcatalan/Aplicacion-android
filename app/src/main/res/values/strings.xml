@@ -5,9 +5,10 @@
     <string name="titol">GameVerse</string>
     <string name="seguent">Següent</string>
     <string name="login">Log in</string>
-    <string name="idioma">Idioma</string>
+    <string name="colorFons">Color Fons</string>
     <string name="fosc">Fosc</string>
     <string name="clar">Clar</string>
+    <string name="grafics">Estadístiques</string>
 
     <!-- Pagina Principal -->
     <string name="novetats">Novetats</string>
