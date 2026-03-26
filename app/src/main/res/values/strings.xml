@@ -107,7 +107,4 @@
     <string name="titolImpacte">Impacte estimat</string>
     <string name="horasUso">Horas de uso: 0h</string>
     <string name="infoCO2">CO₂ equivalente: 0 kg</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

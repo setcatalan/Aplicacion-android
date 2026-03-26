@@ -102,11 +102,14 @@
         app:layout_constraintTop_toTopOf="parent"/>
 
     <ImageView
+        android:id="@+id/ivGrafics"
         android:layout_width="48dp"
         android:layout_height="48dp"
+        android:contentDescription="@string/grafics"
         android:src="@drawable/ic_graficos"
         android:scaleType="center"
         android:background="@color/primary"
+        app:tint="@color/white"
         android:clickable="true"
         android:focusable="true"
         android:padding="10dp"
