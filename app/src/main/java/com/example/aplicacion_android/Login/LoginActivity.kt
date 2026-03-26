@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
@@ -15,6 +16,8 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.aplicacion_android.R
 import com.example.aplicacion_android.User.UserActivity
+import com.google.firebase.Firebase
+import com.google.firebase.firestore.firestore
 
 class LoginActivity : AppCompatActivity() {
 
@@ -25,6 +28,8 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var etPass: EditText
 
     private val loginViewModel: LoginViewModel by viewModels()
+
+    private val db = Firebase.firestore
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -81,6 +86,7 @@ class LoginActivity : AppCompatActivity() {
                 val intent = Intent(this, UserActivity::class.java)
                 intent.putExtra("id", loginViewModel.getIdUsari())
                 startActivity(intent)
+                guardarLogins(loginViewModel.nomUsuari.value ?: "")
                 finish()
             } else {
                 Toast.makeText(this, "Usuari o contrasenya equivocats", Toast.LENGTH_SHORT).show()
@@ -103,5 +109,44 @@ class LoginActivity : AppCompatActivity() {
                 loginViewModel.canviContra(etPass.text.toString())
             }
         })
+    }
+
+    private fun guardarLogins(nom: String){
+
+        db.collection("usuaris")
+            .whereEqualTo("nom", nom)
+            .get()
+            .addOnSuccessListener { result ->
+                if (result.toObjects(UsuariLogin::class.java).count() > 0) {
+                    val item = result.toObjects(UsuariLogin::class.java)[0]
+                    item.numLogins++
+                    db.collection("usuaris").document(item.id).set(item)
+                        .addOnSuccessListener {
+                            Log.i("Firebase", "Guardat correctament")
+                        }
+                        .addOnFailureListener { e ->
+                            Log.e("Firebase", "Error al guardar: $e")
+                        }
+                } else {
+                    val nouDocument = db.collection("usuaris").document()
+
+                    val item = UsuariLogin(
+                        id = nouDocument.id,
+                        nom = nom,
+                        numLogins = 1
+                    )
+
+                    nouDocument.set(item)
+                        .addOnSuccessListener {
+                            Log.i("Firebase", "Creat correctament")
+                        }
+                        .addOnFailureListener { e ->
+                            Log.e("Firebase", "Error al crear: $e")
+                        }
+                }
+            }
+            .addOnFailureListener { e ->
+                Log.e("Firebase", "Error al buscar: $e")
+            }
     }
 }
