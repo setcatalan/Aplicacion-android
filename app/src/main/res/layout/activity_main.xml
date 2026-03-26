@@ -37,7 +37,7 @@
             android:id="@+id/Idioma"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/idioma"
+            android:text="@string/colorFons"
             android:textColor="@color/black"
             android:textSize="25sp"
             android:layout_marginBottom="30dp"/>
@@ -68,6 +68,7 @@
         </RadioGroup>
 
     </LinearLayout>
+
     <Button
         android:id="@+id/btnSeguent"
         android:layout_width="wrap_content"
@@ -98,6 +99,22 @@
         android:layout_marginEnd="10dp"
         app:cornerRadius="5dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <ImageView
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:src="@drawable/ic_graficos"
+        android:scaleType="center"
+        android:background="@color/primary"
+        android:clickable="true"
+        android:focusable="true"
+        android:padding="10dp"
+
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="10dp"
+
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
 
 
