@@ -5,7 +5,7 @@
     <string name="titol">GameVerse</string>
     <string name="seguent">Següent</string>
     <string name="login">Log in</string>
-    <string name="colorFons">Color Fons</string>
+    <string name="idioma">Idioma</string>
     <string name="fosc">Fosc</string>
     <string name="clar">Clar</string>
     <string name="grafics">Estadístiques</string>
@@ -101,9 +101,8 @@
     <!-- Pagina Gràfics -->
     <string name="titolGrafics">Estadístiques</string>
     <string name="titolGeneres">Percentatge per gènere</string>
-    <string name="infoGeneres">Masculí / Femení</string>
     <string name="titolEdats">Porcentatge rangs d\'edat</string>
-    <string name="infoEdats">0-17, 18-30, 31-50, 51+</string>
+    <string name="logins">Logins per usuari</string>
     <string name="titolImpacte">Impacte estimat</string>
     <string name="horasUso">Horas de uso: 0h</string>
     <string name="infoCO2">CO₂ equivalente: 0 kg</string>

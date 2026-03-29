@@ -12,7 +12,6 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.aplicacion_android.Forum.ComentariActivity
 import com.example.aplicacion_android.R
 
 class UsersActivity : AppCompatActivity() {

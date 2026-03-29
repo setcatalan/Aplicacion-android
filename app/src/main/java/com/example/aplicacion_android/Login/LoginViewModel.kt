@@ -29,7 +29,7 @@ class LoginViewModel: ViewModel() {
     fun carregarUsuaris(){
         viewModelScope.launch {
             try {
-                val response = UsuariAPI.Companion.API().llistaUsuaris()
+                val response = UsuariAPI.API().llistaUsuaris()
 
                 if (response.isSuccessful) {
                     llistaUsuaris = response.body() ?: emptyList()
