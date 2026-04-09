@@ -53,7 +53,6 @@ class MainActivity : AppCompatActivity() {
             "Català",
             "Castellano",
             "English",
-            "Estaria bien que enseñaras en vez de criticar"
         )
         val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, idiomes)
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)

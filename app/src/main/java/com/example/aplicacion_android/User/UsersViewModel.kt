@@ -39,7 +39,7 @@ class UsersViewModel : ViewModel() {
                     Log.e("API", "Error HTTP: ${response.code()}")
                 }
             } catch (e: Exception) {
-                Log.e("API", "Error de connexió")
+                Log.e("API", "Error de connexió: $e")
             }
         }
 
