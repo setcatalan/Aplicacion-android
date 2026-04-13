@@ -27,4 +27,21 @@ class UsersViewModel : ViewModel() {
             }
         }
     }
+
+    fun eliminaUsuari(id: Int){
+        viewModelScope.launch {
+            try {
+                val response = UsuariAPI.API().borraUsuari(id)
+
+                if (response.isSuccessful) {
+                    _usuaris.value = _usuaris.value?.filter { it.id != id }
+                } else {
+                    Log.e("API", "Error HTTP: ${response.code()}")
+                }
+            } catch (e: Exception) {
+                Log.e("API", "Error de connexió: $e")
+            }
+        }
+
+    }
 }

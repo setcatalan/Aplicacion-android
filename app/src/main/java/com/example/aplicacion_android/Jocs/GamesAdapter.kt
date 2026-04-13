@@ -29,8 +29,3 @@ class GamesAdapter(
 
     override fun getItemCount(): Int = items.size
 }
-
-class GameViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-    val name: TextView = view.findViewById(R.id.tvGameName)
-    val category: TextView = view.findViewById(R.id.tvGameCategory)
-}

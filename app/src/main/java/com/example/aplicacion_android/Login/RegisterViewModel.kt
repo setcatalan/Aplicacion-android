@@ -88,9 +88,9 @@ class RegisterViewModel : ViewModel() {
 
         val nouUsuari = UsuariRequest(
             nom = user,
-            edat = 18,
-            sexe = Sexe.masculí,
-            contra = "hola123",
+            edat = -1,
+            sexe = Sexe.noEspecificat,
+            contra = pass,
         )
 
         viewModelScope.launch {

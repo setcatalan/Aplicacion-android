@@ -2,6 +2,8 @@ package com.example.aplicacion_android.Login
 
 import android.content.Intent
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageButton
@@ -66,6 +68,16 @@ class RegisterActivity : AppCompatActivity() {
         btnRegister.setOnClickListener {
             viewModel.registerUser()
         }
+    }
+
+    private fun EditText.doAfterTextChanged(onChanged: (String) -> Unit) {
+        addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
+            override fun afterTextChanged(s: Editable?) {
+                onChanged(s?.toString().orEmpty())
+            }
+        })
     }
 
     private fun initObservers() {

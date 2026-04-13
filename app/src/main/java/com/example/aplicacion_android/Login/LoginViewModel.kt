@@ -29,7 +29,7 @@ class LoginViewModel: ViewModel() {
     fun carregarUsuaris(){
         viewModelScope.launch {
             try {
-                val response = UsuariAPI.Companion.API().llistaUsuaris()
+                val response = UsuariAPI.API().llistaUsuaris()
 
                 if (response.isSuccessful) {
                     llistaUsuaris = response.body() ?: emptyList()
@@ -49,5 +49,14 @@ class LoginViewModel: ViewModel() {
             }
         }
         return false
+    }
+
+    fun getIdUsari(): Int{
+        for (usuari in llistaUsuaris){
+            if ((usuari.nom == _nomUsuari.value) and (usuari.contra == _contrasenya.value)){
+                return usuari.id
+            }
+        }
+        return -1
     }
 }

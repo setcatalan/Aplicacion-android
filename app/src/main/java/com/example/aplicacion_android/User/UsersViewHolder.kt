@@ -4,10 +4,13 @@ import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.aplicacion_android.Forum.Comentari
 import com.example.aplicacion_android.R
+import com.squareup.picasso.Picasso
 
 class UsersViewHolder(
-    userView: View
+    userView: View,
+    private val onItemClick: (Usuari?) -> Unit
 ) : RecyclerView.ViewHolder(userView) {
 
     private val tvUsuari: TextView = userView.findViewById(R.id.tvUsuari)
@@ -19,5 +22,9 @@ class UsersViewHolder(
         Picasso.get()
             .load("http://129.158.219.17:8080/api/usuaris/get/imatge/" + user?.id)
             .into(ivUsuari)*/
+
+        itemView.setOnClickListener {
+            onItemClick(user)
+        }
     }
 }
