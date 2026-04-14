@@ -26,6 +26,8 @@ class PrincipalActivity : AppCompatActivity() {
         putExtra(RecognizerIntent.EXTRA_LANGUAGE, "ca-ES")
     }
 
+    private var recoVeu: Boolean = false
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -44,6 +46,8 @@ class PrincipalActivity : AppCompatActivity() {
         btnLogin = findViewById<Button>(R.id.btnLogin)
 
         recognizer = SpeechRecognizer.createSpeechRecognizer(this)
+
+        recoVeu = intent.extras?.getBoolean("recoVeu") ?: false
     }
 
     private fun initListeners() {
@@ -76,12 +80,17 @@ class PrincipalActivity : AppCompatActivity() {
             override fun onPartialResults(partialResults: Bundle?) {}
             override fun onEvent(eventType: Int, params: Bundle?) {}
         })
+
+        if (recoVeu){
+            recognizer.startListening(recognizerIntent)
+        }
     }
 
     private fun handleVoiceCommand(command: String?) {
         when {
             command?.contains("menu") == true -> {
                 val intent = Intent(this, MenuActivity::class.java)
+                intent.putExtra("recoVeu", recoVeu)
                 startActivity(intent)
             }
             command?.contains("iniciar sessió") == true -> {

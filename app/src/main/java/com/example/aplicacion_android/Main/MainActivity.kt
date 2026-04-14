@@ -21,10 +21,13 @@ class MainActivity : AppCompatActivity() {
     private lateinit var btnSeguent: Button
     private lateinit var btnLogin: Button
     private lateinit var rgEstil: RadioGroup
+    private lateinit var rgRecoVeu: RadioGroup
     private lateinit var ivGrafics: ImageView
     private lateinit var spinnerIdioma: Spinner
 
     private var idiomaSeleccionat: String = "Català"
+
+    private var recoVeu: Boolean = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -46,6 +49,7 @@ class MainActivity : AppCompatActivity() {
         btnSeguent = findViewById(R.id.btnSeguent)
         btnLogin = findViewById(R.id.btnLogin)
         rgEstil = findViewById(R.id.rgEstil)
+        rgRecoVeu = findViewById(R.id.rgRecoVeu)
         ivGrafics = findViewById(R.id.ivGrafics)
         spinnerIdioma = findViewById(R.id.spinnerIdioma)
 
@@ -62,6 +66,7 @@ class MainActivity : AppCompatActivity() {
     private fun initListeners() {
         btnSeguent.setOnClickListener {
             val intent = Intent(this, PrincipalActivity::class.java)
+            intent.putExtra("recoVeu", recoVeu)
             startActivity(intent)
         }
 
@@ -71,6 +76,10 @@ class MainActivity : AppCompatActivity() {
         }
 
         rgEstil.setOnCheckedChangeListener { group, checkedId ->  }
+
+        rgRecoVeu.setOnCheckedChangeListener { group, checkedId ->
+            recoVeu = checkedId == R.id.rdSi
+        }
 
         ivGrafics.setOnClickListener {
             val intent = Intent(this, GraficsActivity::class.java)
