@@ -29,6 +29,8 @@ class MenuActivity : AppCompatActivity() {
     private lateinit var recognizer: SpeechRecognizer
     private lateinit var recognizerIntent: Intent
 
+    private var recoVeu: Boolean = false
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -61,6 +63,8 @@ class MenuActivity : AppCompatActivity() {
             putExtra(RecognizerIntent.EXTRA_LANGUAGE, "ca-ES")
         }
 
+        recoVeu = intent.extras?.getBoolean("recoVeu") ?: false
+
         recognizer.setRecognitionListener(object : RecognitionListener {
             override fun onResults(results: Bundle?) {
                 val spokenText = results
@@ -79,6 +83,10 @@ class MenuActivity : AppCompatActivity() {
             override fun onPartialResults(partialResults: Bundle?) {}
             override fun onEvent(eventType: Int, params: Bundle?) {}
         })
+
+        if (recoVeu){
+            recognizer.startListening(recognizerIntent)
+        }
     }
 
 
@@ -88,30 +96,35 @@ class MenuActivity : AppCompatActivity() {
 
         tvPgPrincipal.setOnClickListener {
             val intent = Intent(this, PrincipalActivity::class.java)
+            intent.putExtra("recoVeu", recoVeu)
             startActivity(intent)
             finish()
         }
 
         tvPgForum.setOnClickListener {
             val intent = Intent(this, ForumActivity::class.java)
+            intent.putExtra("recoVeu", recoVeu)
             startActivity(intent)
             finish()
         }
 
         tvPgPreguntes.setOnClickListener {
             val intent = Intent(this, PreguntesActivity::class.java)
+            intent.putExtra("recoVeu", recoVeu)
             startActivity(intent)
             finish()
         }
 
         tvPgInfo.setOnClickListener {
             val intent = Intent(this, JocsActivity::class.java)
+            intent.putExtra("recoVeu", recoVeu)
             startActivity(intent)
             finish()
         }
 
         tvPgAjuda.setOnClickListener {
             val intent = Intent(this, AjudaActivity::class.java)
+            intent.putExtra("recoVeu", recoVeu)
             startActivity(intent)
             finish()
         }
@@ -121,30 +134,35 @@ class MenuActivity : AppCompatActivity() {
         when {
             command?.contains("principal") == true -> {
                 val intent = Intent(this, PrincipalActivity::class.java)
+                intent.putExtra("recoVeu", recoVeu)
                 startActivity(intent)
                 finish()
             }
 
             command?.contains("forum") == true || command?.contains("fòrum") == true -> {
                 val intent = Intent(this, ForumActivity::class.java)
+                intent.putExtra("recoVeu", recoVeu)
                 startActivity(intent)
                 finish()
             }
 
             command?.contains("preguntes") == true -> {
                 val intent = Intent(this, PreguntesActivity::class.java)
+                intent.putExtra("recoVeu", recoVeu)
                 startActivity(intent)
                 finish()
             }
 
-            command?.contains("info") == true || command?.contains("jocs") == true -> {
+            command?.contains("info") == true || command?.contains("informació") == true || command?.contains("jocs") == true -> {
                 val intent = Intent(this, JocsActivity::class.java)
+                intent.putExtra("recoVeu", recoVeu)
                 startActivity(intent)
                 finish()
             }
 
             command?.contains("ajuda") == true -> {
                 val intent = Intent(this, AjudaActivity::class.java)
+                intent.putExtra("recoVeu", recoVeu)
                 startActivity(intent)
                 finish()
             }
